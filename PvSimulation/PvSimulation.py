@@ -20,9 +20,9 @@ import pytz
 start_time = time.time()
 
 # Location Coordinates
-lat = 24.378044 
-lon = 39.512174 
-tz = pytz.timezone('Asia/Riyadh')
+lat = 24 # Change it to the latitude of the location
+lon = 39 # Change it to the longtitude of the location
+tz = pytz.timezone('Asia/Riyadh') # Change it to the timezone used in the location under interest
 
 # Collecting Metrological Data From ExcelSheet "medina_2019_weather_data.xlsx"
 workbook = load_workbook(filename="medina_2019_weather_data.xlsx")
@@ -59,7 +59,7 @@ print(DHItemp)
 #Calculating Sun Position All Year Around each hour
 solpos = solarposition.get_solarposition(DateList, lat, lon)
 solpos = solpos.loc[solpos['elevation'] > 0, :] # Remove sun positions for negative elevations.
-dayList = solpos.index # A subset from DateList that contains only times where the sun is above horizon!
+dayList = solpos.index # A subset from DateList that contains only times where the sun is above the horizon!
 
 #optimization process by converting data to np.array objects and removing night time values
 GHI = np.array([])
@@ -81,7 +81,7 @@ for day1 in dayList:
     sAltiCos = np.append(sAltiCos ,cos(radians(x.elevation)))
     sAltiSin = np.append(sAltiSin, sin(radians(x.elevation)))
     
-# Loop through each Altitude angle and direction of module and calculate total irradiance.
+# Loop through each altitude angle and direction of module and calculate total irradiance.
 angleSteps = 1
 ModuleTilt = np.arange(0,90,angleSteps) # from 0 to 90
 ModuleAzimuth = np.arange(0,360,angleSteps) # from 0 to 360
@@ -99,7 +99,7 @@ with alive_bar(len(ModuleTilt)) as bar:
             tempCos = cos(radians(mAzim - sAzim))
             cosAOI = cosmAlti*sAltiCos*tempCos + sinmAlti*sAltiSin
             cosAOI[cosAOI < 0] = 0 # Reset AOI values to 0 when the sun is behind the module
-            # calcuating Irradiance components with vectors (np.array objects)
+            # calculating Irradiance components with vectors (np.array objects)
             Gdirect = cosAOI * DNI
             Gdiffused = SVF * DHI
             Galbedo = GHI * alpha * (1 - SVF)
