@@ -1,3 +1,12 @@
+"""
+Script Name: PvSimulation.py
+Author: Khalid Fahad Alrehaili
+Date: [2025-03-14]
+Description: this script is a simulation for location assessing
+             and the calucation of optimial azimuth and tilt for
+             PV module.
+"""
+
 from openpyxl import load_workbook
 import datetime
 from pvlib import solarposition
