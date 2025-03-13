@@ -20,8 +20,8 @@ import pytz
 start_time = time.time()
 
 # Location Coordinates
-lat = 24 # Change it to the latitude of the location
-lon = 39 # Change it to the longitude of the location
+lat = 24.37 # Change it to the latitude of the location
+lon = 39.50 # Change it to the longitude of the location
 tz = pytz.timezone('Asia/Riyadh') # Change it to the timezone used in the location under interest
 
 # Collecting Metrological Data From ExcelSheet "medina_2019_weather_data.xlsx"
