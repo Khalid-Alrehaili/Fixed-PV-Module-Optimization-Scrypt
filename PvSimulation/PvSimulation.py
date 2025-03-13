@@ -1,8 +1,8 @@
 """
 Script Name: PvSimulation.py
-Author: Khalid Fahad Alrehaili
+Author: Khalid Alrehaili
 Date: [2025-03-14]
-Description: this script is a simulation for location assessing
+Description: This script is a simulation for location assessing
              and the calucation of optimial azimuth and tilt for
              PV module.
 """
@@ -21,7 +21,7 @@ start_time = time.time()
 
 # Location Coordinates
 lat = 24 # Change it to the latitude of the location
-lon = 39 # Change it to the longtitude of the location
+lon = 39 # Change it to the longitude of the location
 tz = pytz.timezone('Asia/Riyadh') # Change it to the timezone used in the location under interest
 
 # Collecting Metrological Data From ExcelSheet "medina_2019_weather_data.xlsx"
