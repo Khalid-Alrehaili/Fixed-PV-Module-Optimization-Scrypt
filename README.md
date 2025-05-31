@@ -6,3 +6,6 @@ From this information, we can estimate the total irradiance on the PV module for
 
 ![illustration](https://github.com/user-attachments/assets/46dd61a5-016a-408e-81e6-bdcdce6d289a)
 ![output](https://github.com/user-attachments/assets/dbd9e629-80dd-4d31-8e3c-9f366b960a9e)
+
+
+This project was completed as part of the EE462: Alternative Energy course, under the guidance of Dr. Nader Zaal Aljohani.
